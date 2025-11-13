@@ -1,16 +1,41 @@
 spring:
   application:
     name: config-server
-
   profiles:
-    active: native
-
+    active: composite
   cloud:
     config:
       server:
-        native:
-          search-locations: classpath:/configurations
+        composite:
+          - type: native
+            search-locations: classpath:/configurations
+          - type: vault
+            host: localhost
+            port: 8200
+            kvVersion: 2
+            backend: secret
+            default-key: application
+    vault:
+      uri: http://localhost:8200
+      token: ${VAULT_TOKEN}
+      kv:
+        enabled: true
+        backend: secret
+      scheme: http
+      connection-timeout: 5000
+      read-timeout: 15000
 
-  server:
-    port: 8888
-    
+server:
+  port: 8888
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,refresh,env,configprops
+
+logging:
+  level:
+    org.springframework.cloud.config: DEBUG
+    org.springframework.vault: DEBUG
+    org.springframework.cloud.config.server: DEBUG

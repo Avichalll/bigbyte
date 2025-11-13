@@ -1,0 +1,23 @@
+spring:
+  data:
+    mongodb:
+      uri: ${MONGODB_CONNECTION_STRING}
+      database: bigbite
+  # cloud:
+  #   vault:
+  #     uri: http://localhost:8200
+  #     token: ${VAULT_TOKEN}
+  #     kv:
+  #       enabled: true
+  #       backend: secret
+  #       default-context: user-service
+
+server:
+  port: 8081
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+    register-with-eureka: true
+    fetch-registry: true

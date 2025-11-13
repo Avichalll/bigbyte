@@ -15,9 +15,11 @@
     <name>bigbyte</name>
     <description>Demo project for Spring Boot</description>
     
+
     <modules>
         <module>config-server</module>
         <module>service-discovery</module>
+        <module>user-service</module>
     </modules>
     
     <properties>
