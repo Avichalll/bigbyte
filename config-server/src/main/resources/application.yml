@@ -15,6 +15,7 @@ spring:
             kvVersion: 2
             backend: secret
             default-key: application
+            token: ${VAULT_TOKEN}
     vault:
       uri: http://localhost:8200
       token: ${VAULT_TOKEN}

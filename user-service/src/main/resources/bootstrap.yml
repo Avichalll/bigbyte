@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: user-service
+  cloud:
+    config:
+      uri: http://localhost:8888
+      fail-fast: true
+      retry:
+        max-attempts: 6
+        initial-interval: 1000
+
+logging:
+  level:
+    org.springframework.cloud.config: DEBUG
+    org.springframework.boot.context.config: DEBUG
+    org.springframework.data.mongodb: DEBUG

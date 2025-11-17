@@ -3,14 +3,9 @@ spring:
     mongodb:
       uri: ${MONGODB_CONNECTION_STRING}
       database: bigbite
-  # cloud:
-  #   vault:
-  #     uri: http://localhost:8200
-  #     token: ${VAULT_TOKEN}
-  #     kv:
-  #       enabled: true
-  #       backend: secret
-  #       default-context: user-service
+mongodb:
+  ssl:
+    enabled: true 
 
 server:
   port: 8081
