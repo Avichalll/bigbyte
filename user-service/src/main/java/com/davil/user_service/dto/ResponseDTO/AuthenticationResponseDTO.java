@@ -1,7 +1,4 @@
-package com.davil.user_service.user;
-
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
+package com.davil.user_service.dto.ResponseDTO;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -15,18 +12,11 @@ import lombok.Setter;
 @AllArgsConstructor
 @Builder
 
-@Document(collection = "_user")
-
-public class User {
-
-    @Id
-    private String id;
-
+public class AuthenticationResponseDTO {
+        
+    private Integer id;
     private String firstName;
     private String lastName;
-    
     private String email;
 
-
-    
 }

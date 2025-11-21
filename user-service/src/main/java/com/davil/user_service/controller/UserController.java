@@ -6,8 +6,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.davil.user_service.DTO.RequestDTO.UserRequestDTO;
-import com.davil.user_service.DTO.ResponseDTO.UserResponseDTO;
+import com.davil.user_service.dto.RequestDTO.UserRequestDTO;
+import com.davil.user_service.dto.ResponseDTO.UserResponseDTO;
 import com.davil.user_service.service.UserService;
 
 import jakarta.validation.Valid;

@@ -1,4 +1,4 @@
-package com.davil.user_service.DTO.RequestDTO;
+package com.davil.user_service.dto.RequestDTO;
 
 import jakarta.validation.constraints.NotBlank;
 

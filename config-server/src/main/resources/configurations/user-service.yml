@@ -1,11 +1,20 @@
 spring:
-  data:
-    mongodb:
-      uri: ${MONGODB_CONNECTION_STRING}
-      database: bigbite
-mongodb:
-  ssl:
-    enabled: true 
+  datasource:
+    url: ${POSTGRESQL_CONNECTION_STRING}
+    driver-class-name: org.postgresql.Driver
+    username: ${POSTGRESQL_USERNAME}
+    password: ${POSTGRESQL_PASSWORD}
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+    show-sql: true
+  sql:
+    init:
+      mode: always
 
 server:
   port: 8081
